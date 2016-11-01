@@ -1,0 +1,1 @@
+PHP Warning:  mysqli::mysqli(): Headers and client library minor version mismatch. Headers:50173 Library:50312 in /parser/perm/bus.php on line 72

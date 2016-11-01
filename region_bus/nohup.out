@@ -1,0 +1,6 @@
+PHP Warning:  mysql_connect(): Headers and client library minor version mismatch. Headers:50173 Library:50312 in /var/www/html/mybuses/mods/bus/db_mods/connect.php on line 2
+PHP Stack trace:
+PHP   1. {main}() /var/www/html/mybuses/mods/bus/region_bus/cacher.php:0
+PHP   2. require() /var/www/html/mybuses/mods/bus/region_bus/cacher.php:17
+PHP   3. require() /var/www/html/mybuses/mods/bus/db_mods/dbconn.php:7
+PHP   4. mysql_connect() /var/www/html/mybuses/mods/bus/db_mods/connect.php:2

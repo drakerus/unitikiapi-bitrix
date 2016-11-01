@@ -1,0 +1,5 @@
+nohup: ignoring input
+Zend Guard Loader requires Zend Engine API version 220090626.
+The Zend Engine API version 220100525 which is installed, is newer.
+Contact Zend Technologies at http://www.zend.com/ for a later version of Zend Guard Loader.
+

@@ -1,0 +1,209 @@
+<script>
+$(function(){
+     function displayResultStation(item) {
+					if(item.text!='Result not Found'){
+					var prefix='http://mybuses.ru/';
+					var postfix='/station/';			
+					var postfixxx='/';
+					var town='dolgoprudnij';
+					var src=prefix+town+postfix+item.value+postfixxx;
+					window.open(src, "_self");					
+					}
+					else{
+					$('.alert-station').show().html('Увы ничего не найдено, попытайтесь снова');
+					}
+                }
+				
+				   function displayResultBus(item) {
+                   if(item.text!='Result not Found'){					
+					var prefix='http://mybuses.ru/';
+					var postfix='/bus/';					
+					var postfixxx='/';
+					var town='dolgoprudnij';
+					var src=prefix+town+postfix+item.value+postfixxx;
+					window.open(src, "_self");				
+					}
+					else{
+					$('.alert-bus').show().html('Увы ничего не найдено, попытайтесь снова');
+					}
+                }
+
+                $('#station_typehead').typeahead({
+                    source: [					
+										 {id: '12-ya_paromnaya_perepr', name: '12-я паромная перепр'},
+										 {id: '19-i_kv-l', name: '19-й кв-л'},
+										 {id: '22-i_km', name: '22-й км'},
+										 {id: '79-i_km', name: '79-й км'},
+										 {id: 'ats', name: 'АТС'},
+										 {id: 'abbakymovo', name: 'Аббакумово'},
+										 {id: 'avtomasterkaya', name: 'Автомастеркая'},
+										 {id: 'avtopark', name: 'Автопарк'},
+										 {id: 'administraciya', name: 'Администрация'},
+										 {id: 'admiral_m_k', name: 'Адмирал м/к'},
+										 {id: 'apteka', name: 'Аптека'},
+										 {id: 'bank', name: 'Банк'},
+										 {id: 'bolnica', name: 'Больница'},
+										 {id: 'bytakovo', name: 'Бутаково'},
+										 {id: 'vto', name: 'ВТО'},
+										 {id: 'vinogradovo', name: 'Виноградово'},
+										 {id: 'vodniki_pl', name: 'Водники пл.'},
+										 {id: 'gpty-21', name: 'ГПТУ-21'},
+										 {id: 'garaji', name: 'Гаражи'},
+										 {id: 'gnilyshi', name: 'Гнилуши'},
+										 {id: 'gorgaz', name: 'Горгаз'},
+										 {id: 'gorodok', name: 'Городок'},
+										 {id: 'gospital', name: 'Госпиталь'},
+										 {id: 'gostinica', name: 'Гостиница'},
+										 {id: 'gribki', name: 'Грибки'},
+										 {id: 'dk_vperyod', name: 'ДК Вперёд'},
+										 {id: 'dhz_tos', name: 'ДХЗ ТОС'},
+										 {id: 'detskii_mir', name: 'Детский мир'},
+										 {id: 'dmitrovskoe_shosse', name: 'Дмитровское шоссе'},
+										 {id: 'dmitrovskoe_shosse_11', name: 'Дмитровское шоссе 11'},
+										 {id: 'drachevo', name: 'Драчево'},
+										 {id: 'dybovaya_rosha', name: 'Дубовая роща'},
+										 {id: 'eremino', name: 'Еремино'},
+										 {id: 'jilie_doma', name: 'Жилые дома'},
+										 {id: 'zavod', name: 'Завод'},
+										 {id: 'zavodskaya_yl', name: 'Заводская ул'},
+										 {id: 'k_t_polet', name: 'к/т Полет'},
+										 {id: 'katushki', name: 'Катюшки'},
+										 {id: 'kafe', name: 'Кафе'},
+										 {id: 'kladbishe', name: 'Кладбище'},
+										 {id: 'klyazma', name: 'Клязьма'},
+										 {id: 'krasnaya_gorka', name: 'Красная Горка'},
+										 {id: 'laryovo', name: 'Ларёво'},
+										 {id: 'lesopark', name: 'Лесопарк'},
+										 {id: 'lesparkhoz', name: 'Леспаркхоз'},
+										 {id: 'lihachyovskii_povorot', name: 'Лихачёвский поворот'},
+										 {id: 'm_r_ujnii', name: 'М/р Южный'},
+										 {id: 'mkad', name: 'МКАД'},
+										 {id: 'mfti', name: 'МФТИ'},
+										 {id: 'magmelodiya', name: 'Маг.`Мелодия`'},
+										 {id: 'magazin', name: 'Магазин'},
+										 {id: 'marfino_d_o', name: 'Марфино д/о'},
+										 {id: 'molokozavod', name: 'Молокозавод'},
+										 {id: 'moskvich', name: 'Москвич'},
+										 {id: 'nagornoe_shosse', name: 'Нагорное шоссе'},
+										 {id: 'narsyd', name: 'Нарсуд'},
+										 {id: 'neftebaza', name: 'Нефтебаза'},
+										 {id: 'neftebaza_pos', name: 'Нефтебаза пос.'},
+										 {id: 'novo-aleksandrovo', name: 'Ново-Александрово'},
+										 {id: 'novoselcevo', name: 'Новосельцево'},
+										 {id: 'nosovo', name: 'Носово'},
+										 {id: 'ovd', name: 'ОВД'},
+										 {id: 'obshejitie', name: 'Общежитие'},
+										 {id: 'ovoshnaya_baza', name: 'Овощная база'},
+										 {id: 'optovii_rinok', name: 'Оптовый рынок'},
+										 {id: 'pavelcevo', name: 'Павельцево'},
+										 {id: 'pereezd', name: 'Переезд'},
+										 {id: 'plvodniki', name: 'Пл.Водники'},
+										 {id: 'podstanciya', name: 'Подстанция'},
+										 {id: 'prospekt_dryjbi', name: 'Проспект Дружбы'},
+										 {id: 'prospekt_pacaeva', name: 'Проспект Пацаева'},
+										 {id: 'pticefabrika', name: 'Птицефабрика'},
+										 {id: 'sportshkola', name: 'Спортшкола'},
+										 {id: 'stroitel_o_lager', name: 'Строитель о/лагерь'},
+										 {id: 'stroirinok_gribki', name: 'Стройрынок `Грибки`'},
+										 {id: 'syharevo', name: 'Сухарево'},
+										 {id: 'syharevskaya_shkola', name: 'Сухаревская школа'},
+										 {id: 'trc_rio', name: 'ТРЦ `РИО`'},
+										 {id: 'terminal', name: 'Терминал'},
+										 {id: 'tehnikym', name: 'Техникум'},
+										 {id: 'troica', name: 'Троица'},
+										 {id: 'troickoe', name: 'Троицкое'},
+										 {id: 'ylmayakovskogo', name: 'Ул.Маяковского'},
+										 {id: 'ynivermag', name: 'Универмаг'},
+										 {id: 'yniversam', name: 'Универсам'},
+										 {id: 'yniversitet_kyltyri', name: 'Университет культуры'},
+										 {id: 'fedoskino', name: 'Федоскино'},
+										 {id: 'fedoskinskaya_fabrika', name: 'Федоскинская фабрика'},
+										 {id: 'ferma', name: 'Ферма'},
+										 {id: 'hmsz', name: 'ХМСЗ'},
+										 {id: 'himkinskaya_bolnica', name: 'Химкинская больница'},
+										 {id: 'hlebnikovo', name: 'Хлебниково'},
+										 {id: 'hlebnikovo_pl', name: 'Хлебниково пл.'},
+										 {id: 'hlyabovo', name: 'Хлябово'},
+										 {id: 'hram', name: 'Храм'},
+										 {id: 'hram_gpobedonosca', name: 'Храм Г.Победоносца'},
+										 {id: 'cao', name: 'ЦАО'},
+										 {id: 'cerkov', name: 'Церковь'},
+										 {id: 'chashnikovo', name: 'Чашниково'},
+										 {id: 'sheremetevo_1', name: 'Шереметьево 1'},
+										 {id: 'sheremetevo_pl', name: 'Шереметьево пл.'},
+										 {id: 'shkola', name: 'Школа'},
+										 {id: 'sholohovo', name: 'Шолохово'},
+										 {id: 'elektroset', name: 'Электросеть'},
+										 {id: 'ubileinii_pr-kt', name: 'Юбилейный пр-кт'},
+										 {id: 'yahtklyb', name: 'Яхтклуб'},
+										 {id: 'voenkomat', name: 'военкомат'},
+										 {id: 'd_eremino', name: 'д. Еремино'},
+										 {id: 'd_novoselcevo', name: 'д. Новосельцево'},
+										 {id: 'd_fedoskino', name: 'д. Федоскино'},
+										 {id: 'd_sholohovo', name: 'д. Шолохово'},
+										 {id: 'm-n_metro', name: 'м-н Метро'},
+										 {id: 'm_altyfevo', name: 'м. Алтуфьево'},
+										 {id: 'm_planernaya', name: 'м. Планерная'},
+										 {id: 'm_rechnoi_vokzal', name: 'м. Речной вокзал'},
+										 {id: 'm_shodnenskaya', name: 'м. Сходненская'},
+										 {id: 'p_vodniki', name: 'п. Водники'},
+										 {id: 'platf_vodniki', name: 'платф. Водники'},
+										 {id: 'platf_levoberejnaya', name: 'платф. Левобережная'},
+										 {id: 'platf_lianozovo', name: 'платф. Лианозово'},
+										 {id: 'platf_mark', name: 'платф. Марк'},
+										 {id: 'platf_hlebnikovo', name: 'платф. Хлебниково'},
+										 {id: 'psnaksakovo', name: 'псн.Аксаково'},
+										 {id: 'san_dryjba', name: 'сан. Дружба'},
+										 {id: 'st_dolgoprydnaya', name: 'ст. Долгопрудная'},
+										 {id: 'st_katyar', name: 'ст. Катуар'},
+										 {id: 'st_lobnya_l', name: 'ст. Лобня (Л)'},
+										 {id: 'st_lobnya_p', name: 'ст. Лобня (П)'},
+										 {id: 'st_trydovaya', name: 'ст. Трудовая'},
+										 {id: 'st_himki', name: 'ст. Химки'},
+										 {id: 'yl_bibliotechnaya', name: 'ул. Библиотечная'},
+										 {id: 'yl_zavodskaya', name: 'ул. Заводская'},
+										 {id: 'yl_kiovo', name: 'ул. Киово'},
+										 {id: 'yl_lavochkina', name: 'ул. Лавочкина'},
+										 {id: 'yl_mayakovskogo', name: 'ул. Маяковского'},
+										 {id: 'yl_nagornaya', name: 'ул. Нагорная'},
+										 {id: 'yl_pervomaiskaya', name: 'ул. Первомайская'},
+										 {id: 'yl_pojarskogo', name: 'ул. Пожарского'},
+										 {id: 'yl_svobodi', name: 'ул. Свободы'},
+										 {id: 'yl_sovhoznaya', name: 'ул. Совхозная'},
+										 {id: 'yl_sportivnaya', name: 'ул. Спортивная'},
+										 {id: 'yl_flotskaya', name: 'ул. Флотская'},
+										 {id: 'yl_cherepoveckaya', name: 'ул. Череповецкая'},
+					                       
+                    ],					
+                    onSelect: displayResultStation
+                });
+				
+				$('#bus_typeahead').typeahead({
+                    source: [
+										 {id: '1', name: '1 - ст. Долгопрудная – ул. Спортивная  – ст. Долгопрудная'},
+										 {id: '2', name: '2 - Автопарк – военкомат – Автопарк'},
+										 {id: '3', name: '3 - ст. Долгопрудная – м/р Павельцево'},
+										 {id: '4', name: '4 - ст. Долгопрудная – м/р Водники'},
+										 {id: '5', name: '5 - ст. Химки – Химки (платф. Левобережная)'},
+										 {id: '21', name: '21 - Лобня (м/р Южный) – Шереметьево 1'},
+										 {id: '32', name: '32 - ст. Долгопрудная – Химки (ул. Дружбы)'},
+										 {id: '33', name: '33 - ст. Долгопрудная – Ново-Александрово'},
+										 {id: '36', name: '36 - ст. Лобня – Новосельцево'},
+										 {id: '37', name: '37 - д/о Марфино – ст. Катуар'},
+										 {id: '38', name: '38 - ст. Долгопрудная – Шереметьево-1 – ст. Лобня'},
+										 {id: '42', name: '42 - Федоскино – ст. Лобня'},
+										 {id: '70', name: '70 - Д/о Аксаково – ст. Катуар'},
+										 {id: '73', name: '73 - ст. Катуар – 12-я Паромная переправа'},
+										 {id: '302', name: '302 - Троицкое – Москва (м. Алтуфьево)'},
+										 {id: '344', name: '344 - Химки (платф. Левобережная) – Москва (м. Речной вокзал)'},
+										 {id: '368', name: '368 - ст. Долгопрудная – Москва (м. Речной вокзал)'},
+										 {id: '456', name: '456 - Долгопрудный (ДК `Вперед`) – Москва (м. Алтуфьево)'},
+										 {id: '472', name: '472 - ст. Долгопрудная – Москва (м. Сходненская)'},
+										 {id: '1062', name: '1062 - Химки (ул. Совхозная) - Москва (м. Алтуфьево)'},
+					 
+                    ],
+                    onSelect: displayResultBus
+                });
+                
+        });
+</script>

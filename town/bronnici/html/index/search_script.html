@@ -1,0 +1,220 @@
+<script>
+$(function(){
+     function displayResultStation(item) {
+					if(item.text!='Result not Found'){
+					var prefix='http://mybuses.ru/';
+					var postfix='/station/';			
+					var postfixxx='/';
+					var town='bronnici';
+					var src=prefix+town+postfix+item.value+postfixxx;
+					window.open(src, "_self");					
+					}
+					else{
+					$('.alert-station').show().html('Увы ничего не найдено, попытайтесь снова');
+					}
+                }
+				
+				   function displayResultBus(item) {
+                   if(item.text!='Result not Found'){					
+					var prefix='http://mybuses.ru/';
+					var postfix='/bus/';					
+					var postfixxx='/';
+					var town='bronnici';
+					var src=prefix+town+postfix+item.value+postfixxx;
+					window.open(src, "_self");				
+					}
+					else{
+					$('.alert-bus').show().html('Увы ничего не найдено, попытайтесь снова');
+					}
+                }
+
+                $('#station_typehead').typeahead({
+                    source: [					
+										 {id: '9_km', name: '9 км'},
+										 {id: 'a_vgolytvin', name: 'А/в.Голутвин'},
+										 {id: 'a_sstaraya_kolomna', name: 'А/с.Старая Коломна'},
+										 {id: 'avtostanciya', name: 'Автостанция'},
+										 {id: 'agashkino', name: 'Агашкино'},
+										 {id: 'andreevka', name: 'Андреевка'},
+										 {id: 'banya', name: 'Баня'},
+										 {id: 'belkovo', name: 'Бельково'},
+										 {id: 'bespyatovo', name: 'Беспятово'},
+										 {id: 'bespyatovo_2', name: 'Беспятово 2'},
+										 {id: 'bespyatovo_3', name: 'Беспятово 3'},
+										 {id: 'borsheva-1', name: 'Боршева-1'},
+										 {id: 'borsheva-2', name: 'Боршева-2'},
+										 {id: 'borsheva-3', name: 'Боршева-3'},
+										 {id: 'vvelino', name: 'В.Велино'},
+										 {id: 'viniti', name: 'ВИНИТИ'},
+										 {id: 'vohrinka', name: 'Вохринка'},
+										 {id: 'vohrinka_1', name: 'Вохринка 1'},
+										 {id: 'vohrinka_2', name: 'Вохринка 2'},
+										 {id: 'gpl', name: 'ГПЛ'},
+										 {id: 'gsk', name: 'ГСК'},
+										 {id: 'ganysovo', name: 'Ганусово'},
+										 {id: 'gastronom', name: 'Гастроном'},
+										 {id: 'gorka', name: 'Горка'},
+										 {id: 'gorodskoe_kladbishe', name: 'Городское кладбище'},
+										 {id: 'gospital', name: 'Госпиталь'},
+										 {id: 'dachnii_massiv', name: 'Дачный массив'},
+										 {id: 'detskii_sad_19', name: 'Детский сад №19'},
+										 {id: 'dyrniha', name: 'Дурниха'},
+										 {id: 'dyrniha_d58a', name: 'Дурниха д.58А'},
+										 {id: 'eganovo', name: 'Еганово'},
+										 {id: 'jil_gorodok', name: 'Жил. Городок'},
+										 {id: 'jilino', name: 'Жилино'},
+										 {id: 'jiroshkino', name: 'Жирошкино'},
+										 {id: 'jykovo', name: 'Жуково'},
+										 {id: 'zavorovo', name: 'Заворово'},
+										 {id: 'zaozere', name: 'Заозерье'},
+										 {id: 'zelenaya_sloboda', name: 'Зеленая Слобода'},
+										 {id: 'ivanovka', name: 'Ивановка'},
+										 {id: 'karysel', name: 'Карусель'},
+										 {id: 'karer', name: 'Карьер'},
+										 {id: 'kinoteatr', name: 'Кинотеатр'},
+										 {id: 'kladbishe', name: 'Кладбище'},
+										 {id: 'kolledj', name: 'Колледж'},
+										 {id: 'konstantinovo', name: 'Константиново'},
+										 {id: 'krasnoe_znamya', name: 'Красное знамя'},
+										 {id: 'krivci_1', name: 'Кривцы 1'},
+										 {id: 'krivci_2', name: 'Кривцы 2'},
+										 {id: 'levino', name: 'Левино'},
+										 {id: 'madi', name: 'МАДИ'},
+										 {id: 'mag_minimarket', name: 'Маг. Минимаркет'},
+										 {id: 'magazin_d18a', name: 'Магазин д.18А'},
+										 {id: 'makarovka_1', name: 'Макаровка 1'},
+										 {id: 'makarovka_2', name: 'Макаровка 2'},
+										 {id: 'makdonalds', name: 'Макдоналдс'},
+										 {id: 'malishevo', name: 'Малышево'},
+										 {id: 'marinka', name: 'Марьинка'},
+										 {id: 'marinka_2', name: 'Марьинка 2'},
+										 {id: 'marinka_3', name: 'Марьинка 3'},
+										 {id: 'menshovo', name: 'Меньшово'},
+										 {id: 'mirnii', name: 'Мирный'},
+										 {id: 'mihailovskaya_sloboda', name: 'Михайловская Слобода'},
+										 {id: 'miheevo_1', name: 'Михеево 1'},
+										 {id: 'miheevo_2', name: 'Михеево 2'},
+										 {id: 'morozovo_1', name: 'Морозово 1'},
+										 {id: 'morozovo-2', name: 'Морозово-2'},
+										 {id: 'moskvoreche', name: 'Москворечье'},
+										 {id: 'nvelino', name: 'Н.Велино'},
+										 {id: 'nastasino', name: 'Настасьино'},
+										 {id: 'natalino', name: 'Натальино'},
+										 {id: 'nashekino', name: 'Нащекино'},
+										 {id: 'nepecino', name: 'Непецино'},
+										 {id: 'nesterovo', name: 'Нестерово'},
+										 {id: 'nikitskoe-1', name: 'Никитское-1'},
+										 {id: 'nikitskoe-2', name: 'Никитское-2'},
+										 {id: 'nikylino', name: 'Никулино'},
+										 {id: 'novie_doma', name: 'Новые Дома'},
+										 {id: 'oktyabrskii', name: 'Октябрьский'},
+										 {id: 'opitnoe_pole', name: 'Опытное поле'},
+										 {id: 'ostrovci_1', name: 'Островцы 1'},
+										 {id: 'ostrovci_2', name: 'Островцы 2'},
+										 {id: 'otra', name: 'Отра'},
+										 {id: 'p_h_nepecino', name: 'П/х Непецино'},
+										 {id: 'pmk-25', name: 'ПМК-25'},
+										 {id: 'ppm', name: 'ППМ'},
+										 {id: 'panino', name: 'Панино'},
+										 {id: 'patkino_d55', name: 'Паткино д.55'},
+										 {id: 'pitomnik', name: 'Питомник'},
+										 {id: 'po_trebovaniu', name: 'По требованию'},
+										 {id: 'povna_eganovo', name: 'Пов.на Еганово'},
+										 {id: 'povna_nikonovskoe', name: 'Пов.на Никоновское'},
+										 {id: 'povna_nikylskoe', name: 'Пов.на Никульское'},
+										 {id: 'povna_ptf', name: 'Пов.на ПТФ'},
+										 {id: 'povna_semenovskoe', name: 'Пов.на Семеновское'},
+										 {id: 'poddybe', name: 'Поддубье'},
+										 {id: 'podmoskovnii', name: 'Подмосковный'},
+										 {id: 'poliklinnika', name: 'Поликлинника'},
+										 {id: 'polinom', name: 'Полином'},
+										 {id: 'pochinki', name: 'Починки'},
+										 {id: 'pticefabrika', name: 'Птицефабрика'},
+										 {id: 'pticefabrika_mirnaya', name: 'Птицефабрика Мирная'},
+										 {id: 'pyshkino', name: 'Пушкино'},
+										 {id: 'remzavod', name: 'Ремзавод'},
+										 {id: 'rechki-1', name: 'Речки-1'},
+										 {id: 'ribolovo_1', name: 'Рыболово 1'},
+										 {id: 'ribolovo_2', name: 'Рыболово 2'},
+										 {id: 'ribolovo_3', name: 'Рыболово 3'},
+										 {id: 'rileevo', name: 'Рылеево'},
+										 {id: 'rinok', name: 'Рынок'},
+										 {id: 's_t_romashka', name: 'С/т `Ромашка`'},
+										 {id: 's_h_bronnickii', name: 'С/х Бронницкий'},
+										 {id: 's_h_im_telmana', name: 'С/х им Тельмана'},
+										 {id: 'sht', name: 'СХТ'},
+										 {id: 'sever', name: 'Север'},
+										 {id: 'selco', name: 'Сельцо'},
+										 {id: 'semenovskoe', name: 'Семеновское'},
+										 {id: 'solomikovo', name: 'Соломыково'},
+										 {id: 'sofino', name: 'Софьино'},
+										 {id: 'sofino_d16', name: 'Софьино д.16'},
+										 {id: 'stadion', name: 'Стадион'},
+										 {id: 'stanovoe_1', name: 'Становое 1'},
+										 {id: 'stanovoe_2', name: 'Становое 2'},
+										 {id: 'starnikovo_3', name: 'Старниково 3'},
+										 {id: 'starnikovo-1', name: 'Старниково-1'},
+										 {id: 'starnikovo-2', name: 'Старниково-2'},
+										 {id: 'stepanovskoe', name: 'Степановское'},
+										 {id: 'stepanshino', name: 'Степанщино'},
+										 {id: 'tehnologiya', name: 'Технология'},
+										 {id: 'timonino', name: 'Тимонино'},
+										 {id: 'tolmachevo', name: 'Толмачево'},
+										 {id: 'troice-lobanovo', name: 'Троице-Лобаново'},
+										 {id: 'tyajino', name: 'Тяжино'},
+										 {id: 'ylyanino', name: 'Ульянино'},
+										 {id: 'ylyanino_2', name: 'Ульянино 2'},
+										 {id: 'yrojai', name: 'Урожай'},
+										 {id: 'fabrika', name: 'Фабрика'},
+										 {id: 'fominskoe', name: 'Фоминское'},
+										 {id: 'fominskoe_2', name: 'Фоминское 2'},
+										 {id: 'hlebozavod', name: 'Хлебозавод'},
+										 {id: 'hoz_magazin', name: 'Хоз. Магазин'},
+										 {id: 'cerkov', name: 'Церковь'},
+										 {id: 'chasovnya', name: 'Часовня'},
+										 {id: 'chylkovo_2', name: 'Чулково 2'},
+										 {id: 'chylkovo-1', name: 'Чулково-1'},
+										 {id: 'shilovo_d24', name: 'Шилово д.24.'},
+										 {id: 'shkola', name: 'Школа'},
+										 {id: 'shkola_1', name: 'Школа №1'},
+										 {id: 'etys', name: 'ЭТУС'},
+										 {id: 'v_ch_63539', name: 'в/ч 63539'},
+										 {id: 'm_vihino', name: 'м. Выхино'},
+										 {id: 'magazin', name: 'магазин'},
+										 {id: 'ost_81_km', name: 'ост. 81 км'},
+										 {id: 'pov_marinka', name: 'пов. `Марьинка`'},
+										 {id: 'pov_na_zelenyu_slob', name: 'пов. на Зеленую Слоб'},
+										 {id: 's_t_razdole', name: 'с/т `Раздолье`'},
+										 {id: 's_t_tverskoe', name: 'с/т `Тверское`'},
+										 {id: 's_h_stepanovskii', name: 'с/х Степановский'},
+										 {id: 'yl_moskvoreckaya_d', name: 'ул. Москворецкая д.'},
+										 {id: 'yl_pyshina_d_13', name: 'ул. Пущина д. 13'},
+										 {id: 'yl_sharovka', name: 'ул. Шаровка'},
+					                       
+                    ],					
+                    onSelect: displayResultStation
+                });
+				
+				$('#bus_typeahead').typeahead({
+                    source: [
+										 {id: '1', name: '1 - м/р Москворечье – с/х Бронницкий'},
+										 {id: '2', name: '2 - м/р Москворечье – Поликлиника'},
+										 {id: '4', name: '4 - Автостанция – м-н Карусель – Автостанция'},
+										 {id: '5', name: '5 - ул. Москворецкая – Марьинка – ул. Москворецкая'},
+										 {id: '24', name: '24 - Бронницы – Фоминское'},
+										 {id: '30', name: '30 - Бронницы –  Нащекино'},
+										 {id: '35', name: '35 - Бронницы – Натальино'},
+										 {id: '56', name: '56 - Бронницы – м/р Горка'},
+										 {id: '57', name: '57 - Бронницы – Коломна (а/в Коломна)'},
+										 {id: '59', name: '59 - Бронницы – Бельково'},
+										 {id: '66', name: '66 - Бронницы – Беспятово'},
+										 {id: '324', name: '324 - Бронницы – Москва (а/с Выхино)'},
+										 {id: '416', name: '416 - Константиново – Москва (а/с Выхино)'},
+										 {id: '978', name: '978 - Беспятово - Москва (а/с Выхино)'},
+					 
+                    ],
+                    onSelect: displayResultBus
+                });
+                
+        });
+</script>
