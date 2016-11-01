@@ -1,0 +1,93 @@
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	
+	$('.show-hide-column').click(function(event) {
+		var show_columns = [];
+		
+		$('.show-hide-column').each(function() {
+			var number = parseInt($(this).text());
+			if (number > 0) {
+				var th = $('table th.sh_th_' + number.toString());
+				if (th.length > 0) {
+					var column = $(th).index();
+					if ($(this).hasClass('active')) {
+						show_columns.push(column + 1);
+					}
+				}
+			}
+		});
+		
+		var number = parseInt($(this).text());
+		if (number > 0) {
+			var th = $('table th.sh_th_' + number.toString());
+			if (th.length > 0) {
+				var table = $(th).closest('table');
+				var column = $(th).index();
+				if ($.inArray(column + 1, show_columns) > -1) {
+					show_columns = $.grep(show_columns, function(value) { return value != column + 1; });
+				} else {
+					show_columns.push(column + 1);
+				}
+				if (show_columns.length == 0) showAllColumns(); else showColumns(table, show_columns);
+				$(table).find('tbody tr').show();
+				$(table).find('tbody tr').each(function() {
+					var isEmpty = true;
+				  $(this).children('td:visible').each(function() {
+				    if ($.trim($(this).html()) !== '') {
+				      isEmpty = false;
+				      return false;
+				    }
+				  });
+				  if (isEmpty) $(this).hide();
+				});
+			}
+		}
+	});
+	
+	$('.show-all-columns').click(function() {
+		$('.show-hide-column').removeClass('active');
+		showAllColumns();
+	});
+	
+	function showAllColumns() {
+		var table;
+		$('.show-hide-column').each(function() {
+			var number = parseInt($(this).text());
+			if (number > 0) {
+				var th = $('table th.sh_th_' + number.toString());
+				if (th.length > 0) {
+					table = $(th).closest('table');
+					var column = $(th).index();
+					$(th).show();
+					$(table).find('tbody td:nth-child(' + (column + 1).toString() + ')').show();
+				}
+			}
+		});
+		$(table).find('tbody tr').show();
+	}
+	
+	function hideAllColumns() {
+		$('.show-hide-column').each(function() {
+			var number = parseInt($(this).text());
+			if (number > 0) {
+				var th = $('table th.sh_th_' + number.toString());
+				if (th.length > 0) {
+					var table = $(th).closest('table');
+					var column = $(th).index();
+					$(th).hide();
+					$(table).find('tbody td:nth-child(' + (column + 1).toString() + ')').hide();
+				}
+			}
+		});
+	}
+	
+	function showColumns(table, columns) {
+		hideAllColumns();
+		for (i in columns) {
+			$(table).find('thead th:nth-child(' + columns[i].toString() + ')').show();
+			$(table).find('tbody td:nth-child(' + columns[i].toString() + ')').show();
+		}
+	}
+	
+});
+</script>

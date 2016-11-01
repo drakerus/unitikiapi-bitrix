@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "MCA"
+AuthUserFile "/var/www/html/mybuses/mods/bus/mca/.htpasswd"
+Require valid-user
+
+Order allow,deny
+Allow from all
